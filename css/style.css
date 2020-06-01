@@ -1,0 +1,77 @@
+#marcoJuego {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    height: 50rem;
+    background-color: black;
+}
+
+#pantalla {
+    display: flex;
+    width: 115rem;
+    height: 28rem;
+    background-color: white;
+    margin: 2rem;
+    margin-bottom: 0rem;
+}
+
+#controles{
+    display: flex;
+    width: 115rem;
+    height: 18rem;
+    background-color: green;
+    margin: 2rem;
+    margin-top: 0rem;
+}
+
+.infoPlayer{
+    display: flex;
+    flex-direction: column;
+    width: 57.5rem;
+    height: 18rem;
+}
+
+#infoPlayer2 {
+    background-color: yellow;
+}
+
+#infoPlayer1 {
+    background-color: red;
+}
+
+.indicadorVida {
+    display: flex;
+    align-items: flex-start;
+    height: 3rem;
+    margin-top: 1rem;
+    background-color: antiquewhite;
+}
+
+button {
+    display: flex;
+    height: 3rem;
+    width: 7rem;
+    border-radius: 2rem;
+    background-color: rgb(2, 2, 168);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid black;
+}
+
+button:focus {
+    outline: none;
+}
+
+#botonesPlayer1, #botonesPlayer2 {
+    display: flex;
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin: 2rem;
+}
+
+#luchadores1, #luchadores2 {
+    display: flex;
+    height: 7rem;
+    background-color: azure;
+}

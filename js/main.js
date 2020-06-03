@@ -1,28 +1,47 @@
-class luchador {
-    constructor(ataque, defensa, velocidad, astucia){
-        this.ataque = ataque;
-        this.defensa = defensa;
-        this.velocidad = velocidad;
-        this.astucia = astucia;
-    }
-    atacar(){
-
-    }
-    defender(){
-
-    }
+function inicio() {
+     alert ("¿Listo para empezar a jugar?")
 }
 
-const random = () => Math.floor(Math.random()*100);
+let partida = {
+    equipo1: [],
+    equipo2: [],
 
-let butuke = new luchador(random(), random(), random(), random());
-let dort =  new luchador(random(), random(), random(), random());
-let melvian = new luchador(random(), random(), random(), random());
-let falair = new luchador(random(), random(), random(), random());
-let tousa = new luchador(random(), random(), random(), random());
-let stiggeor = new luchador(random(), random(), random(), random());
-let syles = new luchador(random(), random(), random(), random());
-let frake = new luchador(random(), random(), random(), random());
-let kekovey = new luchador(random(), random(), random(), random());
+    
 
-console.log(butuke, dort, melvian, falair, tousa, stiggeor, syles, frake, kekovey)
+}
+
+const añadirJugador = () => {
+    if(equipo1.length == 3){
+        equipo2.push();
+    } else {
+    equipo1.push();
+    }
+}
+        //  DRAG & DROP
+function drag(ev){
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drop(ev){
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+const organizer = (arg_O) => {
+
+    let fasewant = "pantalla" + arg_O;
+    let arrFases = ["pantalla1", "pantalla2","pantalla3", "pantalla4", "pantalla5", "pantalla6"];
+
+    arrFases = arrFases.filter(val => !fasewant.includes(val));
+    document.getElementById(fasewant).style.display = "flex";
+
+    for (let _f of arrFases) {
+        document.getElementById(_f).style.display = "none";
+    }
+}
+   

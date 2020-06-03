@@ -2,28 +2,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <title>Juego de lucha</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
 </head>
 <body>
     <div id="marcoJuego">
         <div id="pantalla">
+            <div class="pantalla" id="pantalla1" onclick="organizer(2)">
+            </div>
+            <div class="pantalla" id="pantalla2" onclick="organizer(3)" style="display:none">
+                <img src="./img/1.jpg" id="luchador1" onclick="añadir()" ondragstart="drag(event)" draggable="true">
+                    </img>
+                    <img src="./img/2.jpg" id="luchador2" onclick="añadir()" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/3.jpg" id="luchador3" onclick="añadir()" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/4.jpg" id="luchador4" onclick="añadir()" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/5.jpg" id="luchador5" onclick="añadir()" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/6.jpg" id="luchador6" onclick="añadir()" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/7.jpg" id="luchador7" onclick="añadir()" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/8.jpg" id="luchador8" onclick="añadir()" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/9.jpg" id="luchador9" onclick="añadir()" ondragstart="drag(event)" draggable="true"\>
+                    </img> 
+            </div>
+            <div class="pantalla" id="pantalla3" onclick="organizer(4)" style="display:none">
+            </div>
+            <div class="pantalla" id="pantalla4" onclick="organizer(5)" style="display:none">
+            </div>
+            <div class="pantalla" id="pantalla5" onclick="organizer(6)" style="display:none">
+            </div>
+            <div class="pantalla" id="pantalla6" onclick="organizer(1)" style="display:none">
+            </div>
         </div>
         <div id="controles">
-            <div id="infoPlayer1" class="infoPlayer">
-                <div class="indicadorVida" id="vidaPlayer1">
+            <div id="infoPlayers">
+                <div id="infoPlayer1">
+                    Player1
                 </div>
+                <div id="infoPlayer2">
+                    Player2
+                </div>
+            </div>
+            <div id="botones">
                 <div id="botonesPlayer1">
                     <button class="botonAtaque" id="atacaPlayer1">Ataca
                     </button>
                     <button class="botonDefiende" id="defiendePlayer1">Defiende
                     </button>
-                </div>
-                <div id="luchadores1"></div>
-            </div>
-            <div id="infoPlayer2" class="infoPlayer">
-                <div class="indicadorVida" id="vidaPlayer2">
                 </div>
                 <div id="botonesPlayer2">
                     <button class="botonAtaque" id="atacaPlayer2">Ataca
@@ -31,10 +62,15 @@
                     <button class="botonDefiende" id="defiendePlayer2">Defiende
                     </button>
                 </div>
-                <div id="luchadores2"></div>
+            </div>
+            <div id="equipos">
+                <div id="luchadoresJugador1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div id="luchadoresJugador2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             </div>
         </div>
     </div>
+
+    <script src="./js/luchadores.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>

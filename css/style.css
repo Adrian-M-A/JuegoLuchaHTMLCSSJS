@@ -1,13 +1,15 @@
-#marcoJuego {
+#marcoJuego{
     display: flex;
     justify-items: center;
     flex-direction: column;
-    height: 50rem;
+    height: 52rem;
     background-color: black;
 }
 
-#pantalla {
+#pantalla{
     display: flex;
+    justify-content: center;
+    align-content: center;
     width: 115rem;
     height: 28rem;
     background-color: white;
@@ -17,38 +19,73 @@
 
 #controles{
     display: flex;
+    flex-direction: column;
     width: 115rem;
-    height: 18rem;
+    height: 20rem;
     background-color: green;
     margin: 2rem;
     margin-top: 0rem;
 }
 
-.infoPlayer{
+#infoPlayers{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 115rem;
+    height: 6rem;
+    background-color: aliceblue;
+}
+
+#infoPlayer1{
+    display: flex;
+    justify-content: center;
+    background-color: #1478bb;
+    height: 6rem;
     width: 57.5rem;
-    height: 18rem;
 }
 
-#infoPlayer2 {
-    background-color: yellow;
-}
-
-#infoPlayer1 {
-    background-color: red;
-}
-
-.indicadorVida {
+#infoPlayer2{
     display: flex;
-    align-items: flex-start;
-    height: 3rem;
+    justify-content: center;
+    display: flex;
+    background-color: #b9123a;
+    height: 6rem;
+    width: 57.5rem;
+}
+
+.indicadorVida{
+    display: flex;
+    height: 2rem;
     margin-top: 1rem;
     background-color: antiquewhite;
 }
 
-button {
+#botones{
     display: flex;
+    flex-direction: row;
+    height: 6rem;
+    width: 115rem;
+}
+
+#botonesPlayer1, #botonesPlayer2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 57.5rem;
+}
+
+#botonesPlayer1{
+    background-color: #1478bb;
+}
+
+#botonesPlayer2{
+    background-color: #b9123a;
+}
+
+button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 3rem;
     width: 7rem;
     border-radius: 2rem;
@@ -57,21 +94,68 @@ button {
     font-size: 1rem;
     text-align: center;
     border: 1px solid black;
+    margin: 1rem;
 }
 
-button:focus {
+button:focus{
     outline: none;
 }
 
-#botonesPlayer1, #botonesPlayer2 {
+#equipos{
     display: flex;
-    justify-self: flex-end;
-    align-self: flex-end;
-    margin: 2rem;
+    flex-direction: row;
+    height: 8rem;
+    width: 115rem;
 }
 
-#luchadores1, #luchadores2 {
+#luchadoresJugador1, #luchadoresJugador2{
     display: flex;
+    flex-direction: row;
+    height: 8rem;
+    width: 57.5rem;
+    background-color: blue;
+} 
+
+img{
+    display: flex;
+    align-self: center;
+    width: 7rem;
     height: 7rem;
-    background-color: azure;
+    margin-left: 1rem;
+}
+
+.pantalla{
+    justify-content: center;
+    align-content: center;
+    width: 115rem;
+}
+
+#pantalla1{
+    background-image: url("../img/Inicio.jpg");
+    background-color: black;
+}
+
+#pantalla2{
+    background-image: url("../img/equipos.jpeg");
+    background-color: black;
+}
+
+#pantalla3{
+    background-image: url("../img/round1.jpg");
+    background-color: black;
+}
+
+#pantalla4{
+    background-image: url("../img/round2.jpg");
+    background-color: black;
+}
+
+#pantalla5{
+    background-image: url("../img/round3.jpg");
+    background-color: black;
+}
+
+#pantalla6{
+    background-image: url("../img/ganador.jpeg");
+    background-color: black;
 }

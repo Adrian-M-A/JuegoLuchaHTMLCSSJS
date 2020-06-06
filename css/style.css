@@ -38,18 +38,20 @@
 #infoPlayer1{
     display: flex;
     justify-content: center;
-    background-color: #1478bb;
+    background-color: black;
     height: 6rem;
     width: 57.5rem;
+    box-shadow: inset 1rem 1rem #1478bb;
 }
 
 #infoPlayer2{
     display: flex;
     justify-content: center;
     display: flex;
-    background-color: #b9123a;
+    background-color: black;
     height: 6rem;
     width: 57.5rem;
+    box-shadow: inset -1rem 1rem #b9123a;
 }
 
 .indicadorVida{
@@ -74,27 +76,34 @@
 }
 
 #botonesPlayer1{
-    background-color: #1478bb;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+        
+}
+
+#player1Ataque, #player2Ataque{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#player1Defensa, #player2Defensa{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
 }
 
 #botonesPlayer2{
-    background-color: #b9123a;
+    background-color: black;
 }
 
 button{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 3rem;
-    width: 7rem;
-    border-radius: 2rem;
-    background-color: rgb(2, 2, 168);
-    color: white;
-    font-size: 1rem;
     text-align: center;
-    border: 1px solid black;
-    margin: 1rem;
 }
 
 button:focus{
@@ -113,15 +122,28 @@ button:focus{
     flex-direction: row;
     height: 8rem;
     width: 57.5rem;
-    background-color: blue;
 } 
+
+#luchadoresJugador1{
+    display: flex;
+    background-color: black;
+    box-shadow: inset -0.5rem -0.5rem #1478bb;
+    padding: 1rem;
+}
+
+#luchadoresJugador2{
+    display: flex;
+    background-color: black;
+    box-shadow: inset 0.5rem -0.5rem #b9123a;
+    padding: 1rem;
+}
 
 img{
     display: flex;
     align-self: center;
     width: 7rem;
     height: 7rem;
-    margin-left: 1rem;
+    margin-left: 0rem;
 }
 
 .pantalla{
@@ -141,16 +163,22 @@ img{
 }
 
 #pantalla3{
+    display: flex;
+    align-items: center;
     background-image: url("../img/round1.jpg");
     background-color: black;
 }
 
 #pantalla4{
+    display: flex;
+    align-items: center;
     background-image: url("../img/round2.jpg");
     background-color: black;
 }
 
 #pantalla5{
+    display: flex;
+    align-items: center;
     background-image: url("../img/round3.jpg");
     background-color: black;
 }
@@ -158,4 +186,27 @@ img{
 #pantalla6{
     background-image: url("../img/ganador.jpeg");
     background-color: black;
+}
+
+.imagenesCombate{
+    display: flex;
+    justify-content: space-between;
+    height: 8rem;
+    width: 60rem;
+}
+
+.luchadorPlayer1{
+    display: flex;
+    justify-content: center;
+    height: 7rem;
+    width: 7rem;
+    background-color: #1478bb;
+}
+
+.luchadorPlayer2{
+    display: flex;
+    height: 7rem;
+    width: 7rem;
+    background-color: #b9123a;
+
 }

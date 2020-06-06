@@ -5,7 +5,7 @@ class luchador {
         this.defensa = defensa;
         this.velocidad = velocidad;
         this.astucia = astucia;
-        this.vida = 500;
+        this.vida = 1000;
     }
     atacar(){
         if (this.astucia >=90 || this.velocidad >= 90){
@@ -51,36 +51,25 @@ let luchador7 = new luchador("syles", random(), random(), random(), random());
 let luchador8 = new luchador("frake", random(), random(), random(), random());
 let luchador9 = new luchador("kekovey", random(), random(), random(), random());
 
-console.log(luchador1, luchador2, luchador3, luchador4, luchador5, luchador6, luchador7, luchador8, luchador9)
-
 // 1. Se crea la clase
 // 2. Se instancia a los luchadores (con nombre de variables sencillas)
 // traductor
 
-let jugadores = {
-    "1": f1,
-    "2": f2,
-    "3": f3,
-    "4": f4,
-    "5": f5,
-    "6": f6,
-    "7": f7,
-    "8": f8,
-    "9": f9
+let luchadores = {
+    "1": luchador1,
+    "2": luchador2,
+    "3": luchador3,
+    "4": luchador4,
+    "5": luchador5,
+    "6": luchador6,
+    "7": luchador7,
+    "8": luchador8,
+    "9": luchador9
 }
 
 let juego = {
-
-    turno: 0,
-    player1: "",
+    // pantalla3Player1: equipo1[0],
     player2: "",
     ganador: "",
-
-    resetearLucha(){
-
-    },
-
-    turnoLucha(){
-
-    },
 }
+

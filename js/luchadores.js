@@ -71,5 +71,6 @@ let juego = {
     // pantalla3Player1: equipo1[0],
     player2: "",
     ganador: "",
+
 }
 

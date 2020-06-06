@@ -29,13 +29,18 @@ let partida = {
         if(e.code == "KeyA"){
             this.equipo2[0].vida -= this.equipo1[0].ataque;
             console.log(`Vida 2 ${this.equipo2[0].vida}`);
+            let vidaPlayer2 = document.getElementById("vidaPlayer2");
+            vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
         }
+
     },
 
     SClick(e){
         if(e.code == "KeyS"){
             this.equipo1[0].vida += this.equipo1[0].defensa;
             console.log(`Vida 1 ${this.equipo1[0].vida}`);
+            let vidaPlayer1 = document.getElementById("vidaPlayer1");
+            vidaPlayer1.innerText = `Vida: ${this.equipo1[0].vida}`;
         }
     },
 
@@ -43,6 +48,8 @@ let partida = {
         if(e.code == "KeyK"){
             this.equipo1[0].vida -= this.equipo2[0].ataque;
             console.log(`Vida 1 ${this.equipo1[0].vida}`);
+            let vidaPlayer1 = document.getElementById("vidaPlayer1");
+            vidaPlayer1.innerText = `Vida: ${this.equipo1[0].vida}`;
         }
     },
 
@@ -50,12 +57,23 @@ let partida = {
         if(e.code == "KeyL"){
             this.equipo2[0].vida += this.equipo2[0].defensa;
             console.log(`Vida 2 ${this.equipo2[0].vida}`);
+            let vidaPlayer2 = document.getElementById("vidaPlayer2");
+            vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
         }
     },
 
-    borrarArray(){
+    borrarDatos(){
         this.equipo1 = [];
         this.equipo2 = [];
+        vidaPlayer1.innerText = "";
+        vidaPlayer2.innerText = "";
+    },
+
+    mostrarVida(){
+        let vidaPlayer1 = document.getElementById("vidaPlayer1");
+        vidaPlayer1.innerText = `Vida: ${this.equipo1[0].vida}`;
+        let vidaPlayer2 = document.getElementById("vidaPlayer2");
+        vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
     }
 }
 
@@ -74,6 +92,7 @@ function allowDrop(ev) {
 
 function drop(ev){
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 }
+

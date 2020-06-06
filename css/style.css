@@ -12,7 +12,7 @@
     align-content: center;
     width: 115rem;
     height: 28rem;
-    background-color: white;
+    background-color: black;
     margin: 2rem;
     margin-bottom: 0rem;
 }
@@ -32,33 +32,64 @@
     flex-direction: row;
     width: 115rem;
     height: 6rem;
-    background-color: aliceblue;
+    background-color: black;
 }
 
 #infoPlayer1{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
     background-color: black;
-    height: 6rem;
-    width: 57.5rem;
-    box-shadow: inset 1rem 1rem #1478bb;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    height: 5rem;
+    width: 56.5rem;
+    border-left: 0.5rem solid #1478bb;
+    border-right: 0.5rem solid #1478bb;
+    border-bottom: 0.5rem double #1478bb;;
+    box-shadow: inset 0rem 1rem #1478bb;
 }
 
 #infoPlayer2{
     display: flex;
     justify-content: center;
-    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 5rem;
+    width: 56.5rem;
     background-color: black;
-    height: 6rem;
-    width: 57.5rem;
-    box-shadow: inset -1rem 1rem #b9123a;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border-left: 0.5rem solid #b9123a;
+    border-right: 0.5rem solid #b9123a;
+    border-bottom: 0.5rem double #b9123a;;
+    box-shadow: inset 0rem 1rem #b9123a;
 }
 
-.indicadorVida{
+#vidaPlayer1{
     display: flex;
-    height: 2rem;
-    margin-top: 1rem;
-    background-color: antiquewhite;
+    justify-self: flex-end;
+    justify-content: center;
+    height: 3rem;
+    width: 56rem;
+    
+    background-color: black;
+    color: white;
+    padding-top: 2rem;
+}
+
+#vidaPlayer2 {
+    display: flex;
+    justify-self: start;
+    justify-content: center;
+    height: 3rem;
+    width: 56rem;
+    background-color: black;
+    color: white;
+    padding-top: 2rem;
 }
 
 #botones{
@@ -80,6 +111,7 @@
     text-align: center;
     justify-content: center;
     background-color: black;
+    border-bottom: 0.5rem double #1478bb;
         
 }
 
@@ -87,17 +119,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-weight: bolder;
+    color: white;
 }
 
 #player1Defensa, #player2Defensa{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-weight: bolder;
     margin-left: 1rem;
+    color: white;
 }
 
 #botonesPlayer2{
     background-color: black;
+    border-bottom: 0.5rem double #b9123a;
 }
 
 button{
@@ -117,24 +154,28 @@ button:focus{
     width: 115rem;
 }
 
-#luchadoresJugador1, #luchadoresJugador2{
-    display: flex;
-    flex-direction: row;
-    height: 8rem;
-    width: 57.5rem;
-} 
-
 #luchadoresJugador1{
     display: flex;
-    background-color: black;
-    box-shadow: inset -0.5rem -0.5rem #1478bb;
+    flex-direction: row;
+    height: 7rem;
+    width: 56.5rem;
     padding: 1rem;
+    background-color: black;
+    border-left: 0.5rem solid #1478bb;
+    border-right: 0.5rem solid #1478bb;
+    border-bottom: 0.5rem solid #1478bb;
 }
 
 #luchadoresJugador2{
     display: flex;
+    flex-direction: row;
+    height: 7rem;
+    width: 56.5rem;
+    padding: 1rem;
     background-color: black;
-    box-shadow: inset 0.5rem -0.5rem #b9123a;
+    border-left: 0.5rem solid #b9123a;
+    border-right: 0.5rem solid #b9123a;
+    border-bottom: 0.5rem solid #b9123a;
     padding: 1rem;
 }
 

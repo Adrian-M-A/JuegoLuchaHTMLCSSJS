@@ -33,29 +33,31 @@
             </div>
             <div class="pantalla" id="pantalla3" onclick="partida.organizer(4), partida.borrarDatos()" style="display:none">
                 <div class="imagenesCombate">
-                    <div class="luchadorPlayer1" id="pantalla3Player1" ondrop="drop(event), partida.añadirJugador1(eventTarget), partida.mostrarVida()" ondragover="allowDrop(event)">
+                    <div class="luchadorPlayer1" id="pantalla3Player1" ondrop="drop(event), partida.añadirJugador1(eventTarget), partida.mostrarVida1()" ondragover="allowDrop(event)">
                     </div>
-                    <div class="luchadorPlayer2" id="pantalla3Player2" ondrop="drop(event), partida.añadirJugador2(eventTarget), partida.mostrarVida()" ondragover="allowDrop(event)">
+                    <div class="luchadorPlayer2" id="pantalla3Player2" ondrop="drop(event), partida.añadirJugador2(eventTarget), partida.mostrarVida2()" ondragover="allowDrop(event)">
                     </div>
                 </div>
             </div>
             <div class="pantalla" id="pantalla4" onclick="partida.organizer(5), partida.borrarDatos()" style="display:none">
                 <div class="imagenesCombate">
-                    <div class="luchadorPlayer1" id="pantalla4Player1" ondrop="drop(event), partida.añadirJugador1(eventTarget), partida.mostrarVida()" ondragover="allowDrop(event)">
+                    <div class="luchadorPlayer1" id="pantalla4Player1" ondrop="drop(event), partida.añadirJugador1(eventTarget), partida.mostrarVida1()" ondragover="allowDrop(event)">
                     </div>
-                    <div class="luchadorPlayer2" id="pantalla4Player2" ondrop="drop(event), partida.añadirJugador2(eventTarget), partida.mostrarVida()" ondragover="allowDrop(event)">
+                    <div class="luchadorPlayer2" id="pantalla4Player2" ondrop="drop(event), partida.añadirJugador2(eventTarget), partida.mostrarVida2()" ondragover="allowDrop(event)">
                     </div>
                 </div>
             </div>
-            <div class="pantalla" id="pantalla5" onclick="partida.organizer(6), partida.borrarDatos()" style="display:none">
+            <div class="pantalla" id="pantalla5" onclick="partida.organizer(6), partida.borrarDatos(), partida.victoria()" style="display:none">
                 <div class="imagenesCombate">
-                    <div class="luchadorPlayer1" id="pantalla5Player1" ondrop="drop(event), partida.añadirJugador1(eventTarget), partida.mostrarVida()" ondragover="allowDrop(event)">
+                    <div class="luchadorPlayer1" id="pantalla5Player1" ondrop="drop(event), partida.añadirJugador1(eventTarget), partida.mostrarVida1()" ondragover="allowDrop(event)">
                     </div>
-                    <div class="luchadorPlayer2" id="pantalla5Player2" ondrop="drop(event), partida.añadirJugador2(eventTarget), partida.mostrarVida()" ondragover="allowDrop(event)">
+                    <div class="luchadorPlayer2" id="pantalla5Player2" ondrop="drop(event), partida.añadirJugador2(eventTarget), partida.mostrarVida2()" ondragover="allowDrop(event)">
                     </div>
                 </div>
             </div>
             <div class="pantalla" id="pantalla6" onclick="partida.organizer(1)" style="display:none">
+                <div id="vencedor">
+                </div>
             </div>
         </div>
         <div id="controles">

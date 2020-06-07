@@ -120,6 +120,7 @@
     flex-direction: column;
     justify-content: center;
     font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
@@ -128,6 +129,7 @@
     flex-direction: column;
     justify-content: center;
     font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
     margin-left: 1rem;
     color: white;
 }
@@ -249,5 +251,14 @@ img{
     height: 7rem;
     width: 7rem;
     background-color: #b9123a;
+}
 
+#vencedor{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 10rem;
+    height: 5rem;
+    background-color: green;
+    color: white;
 }

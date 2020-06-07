@@ -3,14 +3,12 @@ let partida = {
     equipo2: [],
     victoriaPlayer1: 0,
     victoriaPlayer2: 0,
-        //FUNCIONES AÑADIR JUGADORES
+            //FUNCIONES PARA AÑADIR JUGADORES
     añadirJugador1(idJugador){
         this.equipo1.push(luchadores[idJugador]);
-        console.log(`Luchador 1 ${luchadores[idJugador]}`);
     },
     añadirJugador2(idJugador){
         this.equipo2.push(luchadores[idJugador]);
-        console.log(`Luchador 2 ${luchadores[idJugador]}`);
     },
             // ORGANIZADOR PARA PASAR DE PÁGINA
     organizer(arg_O){
@@ -24,11 +22,10 @@ let partida = {
             document.getElementById(_f).style.display = "none";
         }
     },
-            //FUNCIONES AL APRETAR TECLAS DE ATAQUE Y DEFENSA DEL JUGADOR1 Y JUGADOR2
+            //FUNCIONES AL APRETAR TECLAS DE ATAQUE Y DEFENSA DE AMBOS JUGADORES
     AClick(e){
         if(e.code == "KeyA"){
             this.equipo2[0].vida -= this.equipo1[0].ataque;
-            console.log(`Vida 2 ${this.equipo2[0].vida}`);
             let vidaPlayer2 = document.getElementById("vidaPlayer2");
             vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
         }
@@ -39,7 +36,7 @@ let partida = {
             vidaPlayer1.innerText = "WINNER";
             vidaPlayer2.innerText = "";
             vidaPlayer2.innerText = "LOSER";
-            alert(`Player 1 wins.`, `P1 victories: ${this.victoriaPlayer1} P2 victories: ${this.victoriaPlayer2}`)
+            alert(`Player 1 wins. Victories: ${this.victoriaPlayer1} - ${this.victoriaPlayer2}`)
         }
     },
 
@@ -63,7 +60,7 @@ let partida = {
             vidaPlayer1.innerText = "LOSER";
             vidaPlayer2.innerText = "";
             vidaPlayer2.innerText = "WINNER";
-            alert(`Player 2 wins.`, `P1 victories: ${this.victoriaPlayer1} P2 victories: ${this.victoriaPlayer2}`)
+            alert(`Player 2 wins. Victories: ${this.victoriaPlayer1} - ${this.victoriaPlayer2}`)
         }
     },
 
@@ -74,14 +71,14 @@ let partida = {
             vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
         }
     },
-
+            // FUNCION PARA BORRAR DATOS AL CAMBIAR DE PANTALLA
     borrarDatos(){
         this.equipo1 = [];
         this.equipo2 = [];
         vidaPlayer1.innerText = "";
         vidaPlayer2.innerText = "";
     },
-
+            // MUESTRA LA VIDA EN TIEMPO REAL DE CADA LUCHADOR
     mostrarVida1(){
         let vidaPlayer1 = document.getElementById("vidaPlayer1");
         vidaPlayer1.innerText = `Vida: ${this.equipo1[0].vida}`;
@@ -91,24 +88,21 @@ let partida = {
         let vidaPlayer2 = document.getElementById("vidaPlayer2");
         vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
     },
-
+            // MUESTRA EL JUGADOR VENCEDOR EN LA ULTIMA PANTALLA
     victoria(){
         if (this.victoriaPlayer1 >= 2){
-            let pantallaWinner = document.getElementById("vencedor");
-            pantallaWinner.innerText = "EL VENCEDOR ES EL PLAYER 1.";
-            console.log("Ganador player 1")
+            let vencedor = document.getElementById("vencedor");
+            vencedor.innerHTML = '<img id="vencedorPlayer1" src="./img/winnerPlayer1.png" alt="Vencedor equipo1" style="width:57.5rem">';
         } else if (this.victoriaPlayer2 >= 2){
-            let pantallaWinner = document.getElementById("vencedor");
-            pantallaWinner.innerText = "EL VENCEDOR ES EL PLAYER 2.";
-            console.log("Ganador player 2")
+            let vencedor = document.getElementById("vencedor");
+            vencedor.innerHTML = '<img id="vencedorPlayer2" src="./img/winnerPlayer2.png" alt="Vencedor equipo2" style="width:57.5rem">';
         }
     }
 }
-
         //VARIABLE PARA ALMACENAR LA ID DE LA IMAGEN QUE SE COGE Y PASARLA COMO ARGUMENTO EN EL DIV RECEPTOR
 let eventTarget;
 
-        //  DRAG & DROP
+        //  FUNCIONES DRAG & DROP
 function drag(ev){
     ev.dataTransfer.setData("text", ev.target.id);
     eventTarget = ev.target.id; //eventTarget para poder pasar la id de la imagen e incluirla en el array

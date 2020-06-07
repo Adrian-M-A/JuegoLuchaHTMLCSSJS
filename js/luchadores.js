@@ -1,5 +1,6 @@
+            // CREACION DE CLASE LUCHADOR, CON SUS PROPIEDADES Y FUNCIONES
 class luchador {
-    constructor(nombre, ataque, defensa, velocidad, astucia, vida){
+    constructor(nombre, ataque, defensa, velocidad, astucia){
         this.nombre = nombre;
         this.ataque = ataque;
         this.defensa = defensa;
@@ -20,7 +21,6 @@ class luchador {
             enemigo.vida -= this.ataque; 
         }
     }
-
     defender(){
         if (this.defensa >= 50 && this.defensa < 60 || 
             this.astucia >= 60 && this.astucia < 70){
@@ -38,7 +38,7 @@ class luchador {
         }
     }
 }
-
+            // FUNCION RANDOM PARA ASIGNAR A CADA LUCHADOR VALORES ALEATORIOS DE SUS PROPIEDADES EN CADA PARTIDA
 const random = () => Math.floor(Math.random()*100);
 
 let luchador1 = new luchador("butuke",random(), random(), random(), random());
@@ -66,11 +66,3 @@ let luchadores = {
     "8": luchador8,
     "9": luchador9
 }
-
-let juego = {
-    // pantalla3Player1: equipo1[0],
-    player2: "",
-    ganador: "",
-
-}
-

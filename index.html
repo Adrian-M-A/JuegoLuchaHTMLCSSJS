@@ -2,13 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Juego de lucha</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
+</head>     
+<!-- CONSTRUIDO DEL FONDO HACIA ADELANTE Y DE ARRIBA HACIA ABAJO -->
 <body onkeypress="partida.AClick(event), partida.SClick(event), partida.KClick(event), partida.LClick(event)">
     <div id="marcoJuego">
         <div id="pantalla">
+            <!-- SUCESION DE PANTALLAS QUE SE MOSTRARAN O NO SEGUN AVANCE EL JUEGO -->
             <div class="pantalla" id="pantalla1" onclick="partida.organizer(2)">
             </div>
             <div class="pantalla" id="pantalla2" onclick="partida.organizer(3)" style="display:none">
@@ -60,6 +61,7 @@
                 </div>
             </div>
         </div>
+        <!-- PARTE INFERIOR CON INDICADOR DE JUGADOR/VIDA, BOTONES Y FORMACION DE EQUIPOS (OJO CONSTRUIDO EN FILAS) -->
         <div id="controles">
             <div id="infoPlayers">
                 <div id="infoPlayer1">Player 1

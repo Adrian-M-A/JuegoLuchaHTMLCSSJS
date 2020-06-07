@@ -10,16 +10,17 @@ let partida = {
     añadirJugador2(idJugador){
         this.equipo2.push(luchadores[idJugador]);
     },
-            // ORGANIZADOR PARA PASAR DE PÁGINA
-    organizer(arg_O){
-        let fasewant = "pantalla" + arg_O;
-        let arrFases = ["pantalla1", "pantalla2","pantalla3", "pantalla4", "pantalla5", "pantalla6"];
-
-        arrFases = arrFases.filter(val => !fasewant.includes(val));
-        document.getElementById(fasewant).style.display = "flex";
-
-        for (let _f of arrFases) {
-            document.getElementById(_f).style.display = "none";
+            // ORGANIZADOR PROPIO PARA PASAR DE PÁGINA
+    organizer(n){
+        let pantallaOff = "pantalla" + (n-1);
+        let pantallaOn = "pantalla" + n;
+        let pantallaFinal = "pantalla6";
+        if (n == 1){
+            document.getElementById(pantallaFinal).style.display = "none";
+            document.getElementById(pantallaOn).style.display = "flex";
+        } else {
+            document.getElementById(pantallaOff).style.display = "none";
+            document.getElementById(pantallaOn).style.display = "flex";
         }
     },
             //FUNCIONES AL APRETAR TECLAS DE ATAQUE Y DEFENSA DE AMBOS JUGADORES

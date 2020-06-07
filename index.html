@@ -1,0 +1,108 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de lucha</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>     
+<!-- CONSTRUIDO DEL FONDO HACIA ADELANTE Y DE ARRIBA HACIA ABAJO -->
+<body onkeypress="partida.AClick(event), partida.SClick(event), partida.KClick(event), partida.LClick(event)">
+    <div id="marcoJuego">
+        <div id="pantalla">
+            <!-- SUCESION DE PANTALLAS QUE SE MOSTRARAN O NO SEGUN AVANCE EL JUEGO -->
+            <div class="pantalla" id="pantalla1" onclick="partida.organizer(2)">
+            </div>
+            <div class="pantalla" id="pantalla2" onclick="partida.organizer(3)" style="display:none">
+                    <img src="./img/1.jpg" id="1" onclick="partida.añadirJugador(this.id)" ondragstart="drag(event)" draggable="true">
+                    </img>  
+                    <img src="./img/2.jpg" id="2" onclick="partida.añadirJugador(this.id)" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/3.jpg" id="3" onclick="partida.añadirJugador(this.id)" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/4.jpg" id="4" onclick="partida.añadirJugador(this.id)" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/5.jpg" id="5" onclick="partida.añadirJugador(this.id)" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/6.jpg" id="6" onclick="partida.añadirJugador(this.id)" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/7.jpg" id="7" onclick="partida.añadirJugador(this.id)" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/8.jpg" id="8" onclick="partida.añadirJugador(this.id)" ondragstart="drag(event)" draggable="true"\>
+                    </img>
+                    <img src="./img/9.jpg" id="9" onclick="partida.añadirJugador(this.id)" ondragstart="drag(event)" draggable="true"\>
+                    </img> 
+            </div>
+            <div class="pantalla" id="pantalla3" onclick="partida.organizer(4), partida.borrarDatos()" style="display:none">
+                <div class="imagenesCombate">
+                    <div class="luchadorPlayer1" id="pantalla3Player1" ondrop="drop(event), partida.añadirJugador1(eventTarget), partida.mostrarVida1()" ondragover="allowDrop(event)">
+                    </div>
+                    <div class="luchadorPlayer2" id="pantalla3Player2" ondrop="drop(event), partida.añadirJugador2(eventTarget), partida.mostrarVida2()" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+            </div>
+            <div class="pantalla" id="pantalla4" onclick="partida.organizer(5), partida.borrarDatos()" style="display:none">
+                <div class="imagenesCombate">
+                    <div class="luchadorPlayer1" id="pantalla4Player1" ondrop="drop(event), partida.añadirJugador1(eventTarget), partida.mostrarVida1()" ondragover="allowDrop(event)">
+                    </div>
+                    <div class="luchadorPlayer2" id="pantalla4Player2" ondrop="drop(event), partida.añadirJugador2(eventTarget), partida.mostrarVida2()" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+            </div>
+            <div class="pantalla" id="pantalla5" onclick="partida.organizer(6), partida.borrarDatos(), partida.victoria()" style="display:none">
+                <div class="imagenesCombate">
+                    <div class="luchadorPlayer1" id="pantalla5Player1" ondrop="drop(event), partida.añadirJugador1(eventTarget), partida.mostrarVida1()" ondragover="allowDrop(event)">
+                    </div>
+                    <div class="luchadorPlayer2" id="pantalla5Player2" ondrop="drop(event), partida.añadirJugador2(eventTarget), partida.mostrarVida2()" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+            </div>
+            <div class="pantalla" id="pantalla6" onclick="partida.organizer(1)" style="display:none">
+                <div id="vencedor">
+                </div>
+            </div>
+        </div>
+        <!-- PARTE INFERIOR CON INDICADOR DE JUGADOR/VIDA, BOTONES Y FORMACION DE EQUIPOS (OJO CONSTRUIDO EN FILAS) -->
+        <div id="controles">
+            <div id="infoPlayers">
+                <div id="infoPlayer1">Player 1
+                    <div id="vidaPlayer1">
+                    </div>
+                </div>
+                <div id="infoPlayer2">Player 2
+                    <div id="vidaPlayer2">
+                    </div>
+                </div>
+            </div>
+            <div id="botones">
+                <div id="botonesPlayer1">
+                    <div id="player1Ataque">Ataque
+                        <button class="playersBotones" id="atacaPlayer1">A
+                        </button>
+                    </div>
+                    <div id="player1Defensa">Defensa
+                        <button class="playersBotones" id="defiendePlayer1">S
+                        </button>
+                    </div>
+                </div>
+                <div id="botonesPlayer2">
+                    <div id="player2Ataque">Ataque
+                        <button class="playersBotones" id="atacaPlayer2">K
+                        </button>
+                    </div>
+                    <div id="player2Defensa">Defensa
+                        <button class="playersBotones" id="defiendePlayer2">L
+                        </button>
+                    </div>    
+                </div>
+            </div>
+            <div id="equipos">
+                <div id="luchadoresJugador1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div id="luchadoresJugador2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/luchadores.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

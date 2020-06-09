@@ -15,13 +15,16 @@ let partida = {
         let pantallaOff = "pantalla" + (n-1);
         let pantallaOn = "pantalla" + n;
         let pantallaFinal = "pantalla6";
-        if (n == 1){
-            document.getElementById(pantallaFinal).style.display = "none";
-            document.getElementById(pantallaOn).style.display = "flex";
-        } else {
-            document.getElementById(pantallaOff).style.display = "none";
-            document.getElementById(pantallaOn).style.display = "flex";
-        }
+        
+        setTimeout(() => {
+            if (n == 1){
+                document.getElementById(pantallaFinal).style.display = "none";
+                document.getElementById(pantallaOn).style.display = "flex";
+            } else {
+                document.getElementById(pantallaOff).style.display = "none";
+                document.getElementById(pantallaOn).style.display = "flex";
+            }
+        },500)
     },
             //FUNCIONES AL APRETAR TECLAS DE ATAQUE Y DEFENSA DE AMBOS JUGADORES
     AClick(e){

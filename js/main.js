@@ -15,16 +15,23 @@ let partida = {
         let pantallaOff = "pantalla" + (n-1);
         let pantallaOn = "pantalla" + n;
         let pantallaFinal = "pantalla6";
+        let pantallaTransicion = "pantallaTransicion";
         
-        setTimeout(() => {
-            if (n == 1){
-                document.getElementById(pantallaFinal).style.display = "none";
+        if (pantallaOff == "pantalla0"){
+            document.getElementById(pantallaFinal).style.display = "none";
+            document.getElementById(pantallaTransicion).style.display = "flex";
+            setTimeout(() =>{
+                document.getElementById(pantallaTransicion).style.display = "none";
                 document.getElementById(pantallaOn).style.display = "flex";
-            } else {
-                document.getElementById(pantallaOff).style.display = "none";
+            }, 2000); 
+        } else {
+            document.getElementById(pantallaOff).style.display = "none";
+            document.getElementById(pantallaTransicion).style.display = "flex";
+            setTimeout(() => {
+                document.getElementById(pantallaTransicion).style.display = "none";    
                 document.getElementById(pantallaOn).style.display = "flex";
-            }
-        },500)
+            },1000);
+        }        
     },
             //FUNCIONES AL APRETAR TECLAS DE ATAQUE Y DEFENSA DE AMBOS JUGADORES
     AClick(e){
@@ -35,6 +42,7 @@ let partida = {
         }
 
         if (this.equipo2[0].vida <= 0){
+            this.equipo2[0].vida = undefined;
             this.victoriaPlayer1++;
             vidaPlayer1.innerText = "";
             vidaPlayer1.innerText = "WINNER";
@@ -59,6 +67,7 @@ let partida = {
             vidaPlayer1.innerText = `Vida: ${this.equipo1[0].vida}`;
         }
         if (this.equipo1[0].vida <= 0){
+            this.equipo1[0].vida = undefined;
             this.victoriaPlayer2++;
             vidaPlayer1.innerText = "";
             vidaPlayer1.innerText = "LOSER";

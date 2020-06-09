@@ -17,6 +17,13 @@
     margin: 2rem;
 }
 
+#imagenTransicion{
+    display: flex;
+    align-items: center;
+    width: 12rem;
+    height: 12rem;
+}
+
 img{
     display: flex;
     align-self: center;

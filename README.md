@@ -67,4 +67,5 @@ Una juego de lucha hecho con html, css y javascript.
 
 ## Anexo II Novedades
 
-    Sin novedades, por el momento.
+    1. Se han añadido transiciones para pasar de una pantalla a otra.
+    2. Se ha corregido un bug que sumaba victorias si se seguía atacando una vez vencido el rival.

@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>     
 <!-- CONSTRUIDO DEL FONDO HACIA ADELANTE Y DE ARRIBA HACIA ABAJO -->
-<body onkeypress="partida.AClick(event), partida.SClick(event), partida.KClick(event), partida.LClick(event)">
+<body onkeypress="partida.AClick(event), partida.SClick(event), partida.KClick(event), partida.LClick(event), partida.QClick(event), partida.IClick(event)">
     <div id="marcoJuego">
         <div id="pantalla">
             <!-- SUCESION DE PANTALLAS QUE SE MOSTRARAN O NO SEGUN AVANCE EL JUEGO -->
@@ -86,6 +86,10 @@
                         <button class="playersBotones" id="defiendePlayer1">S
                         </button>
                     </div>
+                    <div id="player1Botiquin" style="display:none">Botiquin
+                        <button class="playersBotones" id="botiquinPlayer1" style="display:none">Q
+                        </button>
+                    </div>  
                 </div>
                 <div id="botonesPlayer2">
                     <div id="player2Ataque">Ataque
@@ -95,12 +99,23 @@
                     <div id="player2Defensa">Defensa
                         <button class="playersBotones" id="defiendePlayer2">L
                         </button>
-                    </div>    
+                    </div>
+                    <div id="player2Botiquin" style="display:none">Botiquin
+                        <button class="playersBotones" id="botiquinPlayer2" style="display:none">I
+                        </button>
+                    </div>   
                 </div>
             </div>
             <div id="equipos">
-                <div id="luchadoresJugador1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div id="luchadoresJugador2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div id="luchadoresJugador1">
+                    <div id="equipoJugador1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </div>
+                </div>
+                
+                <div id="luchadoresJugador2">
+                    <div id="equipoJugador2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

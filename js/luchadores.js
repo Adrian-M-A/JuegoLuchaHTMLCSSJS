@@ -50,6 +50,8 @@ let luchador6 = new luchador("stiggeor", random(), random(), random(), random())
 let luchador7 = new luchador("syles", random(), random(), random(), random());
 let luchador8 = new luchador("frake", random(), random(), random(), random());
 let luchador9 = new luchador("kekovey", random(), random(), random(), random());
+let luchador10 = new luchador("stats", random(), random(), random(), random());
+let luchador11 = new luchador("vance", random(), random(), random(), random());
 
 // 1. Se crea la clase
 // 2. Se instancia a los luchadores (con nombre de variables sencillas)
@@ -64,5 +66,7 @@ let luchadores = {
     "6": luchador6,
     "7": luchador7,
     "8": luchador8,
-    "9": luchador9
+    "9": luchador9,
+    "10": luchador10,
+    "11": luchador11
 }

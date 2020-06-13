@@ -45,7 +45,7 @@ let partida = {
                 document.getElementById("botiquinPlayer2").style.display = "flex";
                 document.getElementById("player2Botiquin").style.display = "flex";
             }
-        } else if (this.equipo2[0].vida <= 0){
+        } else if (e.code == "KeyA" && this.equipo2[0].vida <= 0){
                 this.equipo2[0].vida = undefined;
                 this.equipo1[0].vida = undefined;
                 this.victoriaPlayer1++;
@@ -53,7 +53,7 @@ let partida = {
                 vidaPlayer1.innerText = "WINNER";
                 vidaPlayer2.innerText = "";
                 vidaPlayer2.innerText = "LOSER";
-                alert(`Player 1 wins. Victories: ${this.victoriaPlayer1} - ${this.victoriaPlayer2}`)
+                alert(`Player 1 wins. Victories: ${this.victoriaPlayer1} - ${this.victoriaPlayer2}`);
             }
     },
 
@@ -67,7 +67,7 @@ let partida = {
 
     QClick(e) {
         if(e.code == "KeyQ" && this.botiquinP1 == 0){
-            this.equipo1[0].vida += 1000;
+            this.equipo1[0].vida = 1000;
             this.botiquinP1 = 1;
             document.getElementById("botiquinPlayer1").style.display = "none";
             document.getElementById("player1Botiquin").style.display = "none";
@@ -85,13 +85,14 @@ let partida = {
             }
         } else if (e.code == "KeyK" && this.equipo1[0].vida <= 0){
                 this.equipo1[0].vida = undefined;
-                this.equipo2[0].vida = undefined;
+                this.equipo2[0].vida = undefined;    
                 this.victoriaPlayer2++;
                 vidaPlayer1.innerText = "";
                 vidaPlayer1.innerText = "LOSER";
                 vidaPlayer2.innerText = "";
                 vidaPlayer2.innerText = "WINNER";
-                alert(`Player 2 wins. Victories: ${this.victoriaPlayer1} - ${this.victoriaPlayer2}`)
+                alert(`Player 2 wins. Victories: ${this.victoriaPlayer1} - ${this.victoriaPlayer2}`);
+                
             }
         
     },
@@ -106,7 +107,7 @@ let partida = {
 
     IClick(e) {
         if(e.code == "KeyI" && this.botiquinP2 == 0){
-            this.equipo2[0].vida += 1000;
+            this.equipo2[0].vida = 1000;
             this.botiquinP2 = 1;
             document.getElementById("botiquinPlayer2").style.display = "none";
             document.getElementById("player2Botiquin").style.display = "none";
@@ -137,14 +138,6 @@ let partida = {
         } else if (this.victoriaPlayer2 >= 2){
             let vencedor = document.getElementById("vencedor");
             vencedor.innerHTML = '<img id="vencedorPlayer2" src="./img/winnerPlayer2.png" alt="Vencedor equipo2" style="width:57.5rem">';
-        }
-    },
-
-    botiquin(){
-        if(this.equipo2[0].vida < 200){
-            document.getElementById("botiquinPlayer2").style.display = "flex";
-            console.log("Vida crítica");
-
         }
     }
 }

@@ -5,10 +5,12 @@ let partida = {
     victoriaPlayer2: 0,
     botiquinP1: 0,
     botiquinP2: 0,
+
             //FUNCIONES PARA AÑADIR JUGADORES
     añadirJugador1(idJugador){
         this.equipo1.push(luchadores[idJugador]);
     },
+    
     añadirJugador2(idJugador){
         this.equipo2.push(luchadores[idJugador]);
     },
@@ -40,10 +42,13 @@ let partida = {
         if(e.code == "KeyA" && this.equipo2[0].vida > 0){
             this.equipo2[0].vida -= this.equipo1[0].ataque;
             let vidaPlayer2 = document.getElementById("vidaPlayer2");
-            vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
-            if(this.equipo2[0].vida < 200 && this.botiquinP2 == 0){
-                document.getElementById("botiquinPlayer2").style.display = "flex";
-                document.getElementById("player2Botiquin").style.display = "flex";
+            vidaPlayer2.innerHTML = `<div id="barraVida2" style="width:${this.equipo2[0].vida/18}rem"></div>`;
+            if(this.equipo2[0].vida < 200){
+                vidaPlayer2.innerHTML = `<div id="barraVida2" style="background-color:yellow;width:${this.equipo2[0].vida/18}rem"></div>`;
+                if(this.botiquinP2 == 0){
+                    document.getElementById("botiquinPlayer2").style.display = "flex";
+                    document.getElementById("player2Botiquin").style.display = "flex";
+                }
             }
         } else if (e.code == "KeyA" && this.equipo2[0].vida <= 0){
                 this.equipo2[0].vida = undefined;
@@ -59,9 +64,13 @@ let partida = {
 
     SClick(e){
         if(e.code == "KeyS"){
-            this.equipo1[0].vida += this.equipo1[0].defensa;
+            if(this.equipo1[0].vida >= 1000) {
+                this.equipo1[0].vida += 0;
+            }else {
+                this.equipo1[0].vida += this.equipo1[0].defensa;
+            }
             let vidaPlayer1 = document.getElementById("vidaPlayer1");
-            vidaPlayer1.innerText = `Vida: ${this.equipo1[0].vida}`;
+            vidaPlayer1.innerHTML = `<div id="barraVida1" style="width:${this.equipo1[0].vida/18}rem"></div>`;
         }
     },
 
@@ -78,10 +87,13 @@ let partida = {
         if(e.code == "KeyK" && this.equipo1[0].vida > 0){
             this.equipo1[0].vida -= this.equipo2[0].ataque;
             let vidaPlayer1 = document.getElementById("vidaPlayer1");
-            vidaPlayer1.innerText = `Vida: ${this.equipo1[0].vida}`;
-            if(this.equipo1[0].vida < 200 && this.botiquinP1 == 0){
-                document.getElementById("botiquinPlayer1").style.display = "flex";
-                document.getElementById("player1Botiquin").style.display = "flex";
+            vidaPlayer1.innerHTML = `<div id="barraVida1" style="width:${this.equipo1[0].vida/18}rem"></div>`;
+            if(this.equipo1[0].vida < 200){
+                vidaPlayer1.innerHTML = `<div id="barraVida1" style="background-color:yellow;width:${this.equipo1[0].vida/18}rem"></div>`;
+                if(this.botiquinP1 == 0){
+                    document.getElementById("botiquinPlayer1").style.display = "flex";
+                    document.getElementById("player1Botiquin").style.display = "flex";
+                } 
             }
         } else if (e.code == "KeyK" && this.equipo1[0].vida <= 0){
                 this.equipo1[0].vida = undefined;
@@ -92,16 +104,18 @@ let partida = {
                 vidaPlayer2.innerText = "";
                 vidaPlayer2.innerText = "WINNER";
                 alert(`Player 2 wins. Victories: ${this.victoriaPlayer1} - ${this.victoriaPlayer2}`);
-                
             }
-        
     },
 
     LClick(e){
         if(e.code == "KeyL"){
-            this.equipo2[0].vida += this.equipo2[0].defensa;
+            if(this.equipo2[0].vida >= 1000) {
+                this.equipo2[0].vida += 0;
+            }else {
+                this.equipo2[0].vida += this.equipo2[0].defensa;
+            }
             let vidaPlayer2 = document.getElementById("vidaPlayer2");
-            vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
+            vidaPlayer2.innerHTML = `<div id="barraVida2" style="width:${this.equipo2[0].vida/18}rem"></div>`;
         }
     },
 
@@ -123,12 +137,14 @@ let partida = {
             // MUESTRA LA VIDA EN TIEMPO REAL DE CADA LUCHADOR
     mostrarVida1(){
         let vidaPlayer1 = document.getElementById("vidaPlayer1");
-        vidaPlayer1.innerText = `Vida: ${this.equipo1[0].vida}`;
+        // vidaPlayer1.innerText = `Vida: ${this.equipo1[0].vida}`;
+        vidaPlayer1.innerHTML = `<div id="barraVida1" style="width:${this.equipo1[0].vida/18}rem"></div>`;
     },
 
     mostrarVida2(){
         let vidaPlayer2 = document.getElementById("vidaPlayer2");
-        vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
+        // vidaPlayer2.innerText = `Vida: ${this.equipo2[0].vida}`;
+        vidaPlayer2.innerHTML = `<div id="barraVida2" style="width:${this.equipo1[0].vida/18}rem"></div>`;
     },
             // MUESTRA EL JUGADOR VENCEDOR EN LA ULTIMA PANTALLA
     victoria(){

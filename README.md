@@ -96,5 +96,7 @@ Una juego de lucha hecho con html, css y javascript.
     3. Se han añadido zonas donde ubicar los equipos de los jugadores.
     4. Se han añadido nuevos luchadores.
     5. Se ha añadido un botiquin por jugador que se puede utilizar una 
-    única vez durante los 3 asaltos. Se muestra cuando la vida de algún luchador es critica (< 200). 
+    única vez durante los 3 asaltos. Se muestra cuando la vida de algún 
+    luchador es critica (< 200).
+    6. Se ha cambiado el indicador de vida a una barra de vida.
 

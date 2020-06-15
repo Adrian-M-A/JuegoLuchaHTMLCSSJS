@@ -129,7 +129,8 @@ img{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     height: 5rem;
-    width: 56.5rem;
+    width: 55.5rem;
+    padding-left: 1rem;
     border-left: 0.5rem solid #1478bb;
     border-right: 0.5rem solid #1478bb;
     border-bottom: 0.5rem double #1478bb;
@@ -142,11 +143,12 @@ img{
     flex-direction: column;
     text-align: center;
     height: 5rem;
-    width: 56.5rem;
+    width: 55.5rem;
     background-color: black;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
+    padding-left: 1rem;
     border-left: 0.5rem solid #b9123a;
     border-right: 0.5rem solid #b9123a;
     border-bottom: 0.5rem double #b9123a;
@@ -156,13 +158,30 @@ img{
 #vidaPlayer1, #vidaPlayer2{
     display: flex;
     justify-self: flex-end;
-    justify-content: center;
+    justify-content: flex-start;
     height: 3rem;
-    width: 56rem;
+    width: 55rem;
     background-color: black;
     color: white;
     padding-top: 2rem;
 }
+
+#barraVida1{
+    display: flex;
+    justify-content: start;
+    border-radius: 0.5rem;
+    background-color: #1478bb;
+    height: 1.5rem;
+}
+
+#barraVida2{
+    display: flex;
+    justify-content: start;
+    border-radius: 0.5rem;
+    background-color: #b9123a;
+    height: 1.5rem;
+}
+
             /* PARTE MEDIA CON LOS BOTONES DE ATAQUE Y DEFENSA (OJO CONSTRUIDO EN FILAS)*/
 #botones{
     display: flex;
@@ -206,6 +225,7 @@ img{
     margin-left: 1rem;
     color: white;
 }
+
 #player1Botiquin, #player2Botiquin {
     display: flex;
     flex-direction: column;
